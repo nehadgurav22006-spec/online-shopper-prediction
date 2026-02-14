@@ -107,5 +107,9 @@ def dashboard():
                            buy_count=buy_count,
                            not_buy_count=not_buy_count)
 
+import os
+
+app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)), debug=False)
+
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    app.run(debug=False, port=5001)
