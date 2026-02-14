@@ -1,0 +1,23 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<canvas id="predictionChart"></canvas>
+
+<script>
+var ctx = document.getElementById('predictionChart').getContext('2d');
+var predictionChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Buy', 'Not Buy'],
+        datasets: [{
+            label: 'Predictions',
+            data: [{{ buy_count }}, {{ not_buy_count }}],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        animation: {
+            duration: 2000
+        }
+    }
+});
+</script>
